@@ -7,6 +7,5 @@
  *
  * @author Jeremy
  */
-public class Test {
-    
+public class Fonction {
 }
