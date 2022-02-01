@@ -8,14 +8,15 @@
  * @author Jeremy
  */
 public class Materiel {
-    public String mousqueton;
-    public String gants;
-    public String brassard;
-    public String menottes;
-    public String cyno;
-    public String talky;
-    public String lampe;
-    public String kit;
-    public String taser;
-    public String lacrymo;
+    public Boolean mousqueton;
+    public Boolean gants;
+    public Boolean brassard;
+    public Boolean menottes;
+    public Boolean cyno;
+    public Boolean talky;
+    public Boolean lampe;
+    public Boolean kit;
+    public Boolean taser;
+    public Boolean lacrymo;
+
 }

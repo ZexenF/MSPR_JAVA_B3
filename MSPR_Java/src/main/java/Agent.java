@@ -11,4 +11,5 @@ public class Agent {
     public String nom;
     public String prenom;
     public String password;
+    public String fonction;
 }
