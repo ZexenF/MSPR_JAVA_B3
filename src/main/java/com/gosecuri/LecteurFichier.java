@@ -1,43 +1,40 @@
 package com.gosecuri;
 import java.io.*;
-import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Lecture {
-    String lecture_nom;
-    String lecture_prenom;
-    String lecture_fonction;
-    String lecture_password;
-    List<String> lecture_materiel = null;
+public class LecteurFichier {
 
-    public Lecture(String lecture_nom, String lecture_prenom, String lecture_fonction, String lecture_password, List<String> lecture_materiel) {
-        this.lecture_nom = lecture_nom;
-        this.lecture_prenom = lecture_prenom;
-        this.lecture_fonction = lecture_fonction;
-        this.lecture_password = lecture_password;
-        this.lecture_materiel = lecture_materiel;
-    }
 
-    public void lecture_staff() {
-        String file = "cheminfichier"; //Chemin du fichier à lire
+    public Map<String, Agent> lecture_staff() {
+        Map<String,Agent> map_agent = new HashMap<>();
+        String file = "C:\\Users\\Jeremy\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\txt\\staff.txt"; //Chemin du fichier à lire
         try(BufferedReader br = new BufferedReader(new FileReader(file)))
         {
             String line;
             while ((line = br.readLine()) != null) {
-                lecture_agent(line);
+                map_agent.put(line,lecture_agent(line));
+                System.out.println(line);
             }
         }
         catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace(); //écrit ce qui s'est passé dans l'exception
         }
+        return map_agent;
     }
 
 
     public Agent lecture_agent(String fiche) {
-
+        String lecture_nom = null;
+        String lecture_prenom = null;
+        String lecture_fonction = null;
+        String lecture_password = null;
+        List<String> lecture_materiel = new ArrayList<>();
         try {
-            FileReader file_agent = new FileReader(fiche + ".txt");
+            FileReader file_agent = new FileReader(String.format("C:\\Users\\Jeremy\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\txt\\%s.txt",fiche));
             BufferedReader buffer = new BufferedReader(file_agent);
             for (int i = 1; i < 15; i++) {
                 if (i == 1) {
