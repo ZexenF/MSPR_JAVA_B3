@@ -6,3 +6,6 @@ target/
 
 .idea/uiDesigner.xml
 
+*.iml
+*.ipr
+*.iws
