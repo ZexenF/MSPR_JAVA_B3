@@ -15,7 +15,6 @@ public class Agent {
         this.password = password;
         this.job = job;
         this.materiel = materiel;
-
     }
 
     public String getNom() {
