@@ -2,6 +2,7 @@ package com.gosecuri;
 
 import java.io.*;
 import java.net.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +12,10 @@ public class LecteurFichier {
 
 
     public Map<String, Agent> lecture_staff() {
+
         Map<String, Agent> map_agent = new HashMap<>();
         String file = "PATH\\TO\\FILE\\staff.txt"; //Chemin du fichier à lire
+
         try(BufferedReader br = new BufferedReader(new FileReader(file)))
         {
             String line;
@@ -37,6 +40,7 @@ public class LecteurFichier {
         List<String> lecture_materiel = new ArrayList<>();
         try {
             FileReader file_agent = new FileReader(String.format("PATH\\TO\\FILE\\%s.txt",fiche)); //chemin a modifié car test en dur
+
             BufferedReader buffer = new BufferedReader(file_agent);
             for (int i = 1; i < 15; i++) {
                 if (i == 1) {

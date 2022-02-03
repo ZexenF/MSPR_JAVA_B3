@@ -1,5 +1,6 @@
 package com.gosecuri;
 
+
 import java.util.*;
 
 public class Agent {
@@ -36,4 +37,5 @@ public class Agent {
     public List<String> getMateriel() {
         return materiel;
     }
+
 }
