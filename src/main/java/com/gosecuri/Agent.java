@@ -1,4 +1,5 @@
-package main.java.com.gosecuri;
+package com.gosecuri;
+
 
 import java.util.*;
 
@@ -36,4 +37,5 @@ public class Agent {
     public List<String> getMateriel() {
         return materiel;
     }
+
 }

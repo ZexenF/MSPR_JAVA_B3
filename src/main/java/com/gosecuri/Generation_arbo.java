@@ -1,4 +1,5 @@
-package main.java.com.gosecuri;
+package com.gosecuri;
+
 
 import java.io.File;
 import java.nio.file.Files;
@@ -13,4 +14,6 @@ public class Generation_arbo {
             new File(destination + raccourci).mkdir();
         });
     }
+
 }
+
