@@ -1,4 +1,4 @@
-package com.gosecuri;
+package main.java.com.gosecuri;
 
 import java.io.File;
 import java.nio.file.Files;
