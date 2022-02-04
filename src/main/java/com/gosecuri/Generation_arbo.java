@@ -19,7 +19,6 @@ public class Generation_arbo {
             new File(destination + raccourci).mkdir();
             try(PrintWriter writer = new PrintWriter(destination+"\\"+ raccourci+"\\"+raccourci+".html")) {
                 writer.println("<html><head><title>Titre </title></head>");
-
                 writer.flush();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
