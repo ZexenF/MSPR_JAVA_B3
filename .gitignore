@@ -1,0 +1,11 @@
+*.bak
+
+target/
+
+.idea/vcs.xml
+
+.idea/uiDesigner.xml
+
+*.iml
+*.ipr
+*.iws
