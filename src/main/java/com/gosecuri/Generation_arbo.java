@@ -7,11 +7,11 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 public class Generation_arbo {
-    public static void generation_arborescence(Map map_agent, String destination) {
+    public static void generation_arborescence(Map<String, Agent> map_agent, String destination) {
         map_agent.forEach((raccourci, complet) -> {
             new File(destination + raccourci).mkdir();
             try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
-                writer.println("<html><head><title><title><head>");
+                writer.println("<html><head>"+complet.getNom()+"<title><title><head>");
                 writer.flush();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
