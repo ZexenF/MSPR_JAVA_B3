@@ -4,6 +4,7 @@ package com.gosecuri;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 public class Generation_arbo {
@@ -11,8 +12,14 @@ public class Generation_arbo {
         map_agent.forEach((raccourci, complet) -> {
             new File(destination + raccourci).mkdir();
             try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
-                writer.println("<html><head>"+complet.getNom()+"<title><title><head>");
+
+                for (String materiel : complet.getMateriel()){
+                    writer.println("<div><input type=\"checkbox\" name=\""+materiel+"\" checked>\n"
+                            +"<label for =\""+materiel+"\"> "+materiel+"</label>\n</div>");
+
+                }
                 writer.flush();
+                writer.println("</body>");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
