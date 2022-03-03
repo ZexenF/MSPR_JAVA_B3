@@ -63,11 +63,12 @@ public class LecteurFichier {
             }
         }
         catch (IOException e) {
-            System.out.println("Une erreur s'est passée.");
+            System.out.println("Une erreur s'est passée dans lecture_agent.");
             e.printStackTrace(); //écrit ce qui s'est passé dans l'exception
         }
         Agent agent_lu = new Agent(lecture_nom,lecture_prenom,lecture_password,lecture_fonction,lecture_materiel);
 
         return agent_lu;
     }
+
 }
