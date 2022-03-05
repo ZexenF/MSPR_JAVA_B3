@@ -5,23 +5,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Map;
 
 public class Generation_arbo {
-    public static void generation_arborescence(Map<String, Agent> map_agent, String destination) throws IOException {
-        Map<String,String> map_materiel = new Read_materiel().fiche_materiel();
+    public static void generation_arborescence(Map<String, Agent> map_agent, String destination, Map<String, String> map_materiel) throws IOException {
+
         map_agent.forEach((raccourci, complet) -> {
             new File(destination + raccourci).mkdir();
             try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
-                map_materiel.forEach((abrege, longue) -> {
-                    for (String str : complet.getMateriel()){
-                        if (str.equals(abrege)){
-                            writer.println("<div><input type=\"checkbox\" name=\""+longue+"\" checked>\n"
-                                    +"<label for =\""+longue+"\"> "+longue+"</label>\n</div>");
+                for (String comp : complet.getMateriel()) {
+                    map_materiel.forEach((abrege, longue) -> {
+
+                        if (comp.equals(abrege)) {
+                            writer.println("<div><input type=\"checkbox\" name=\"" + longue + "\" checked>\n"
+                                    + "<label for =\"" + longue + "\"> " + longue + "</label>\n</div>");
                         }
-                    }
-                });
+                    });
+                }
+                ;
                 writer.flush();
                 writer.println("</body>");
             } catch (FileNotFoundException e) {
