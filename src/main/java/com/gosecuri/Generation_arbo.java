@@ -22,7 +22,7 @@ public class Generation_arbo {
                         }
                     });
                 }
-                writer.println("<img src="+ guillemet +"\\var\\lib\\jenkins\\workspace\\MSPR_JAVA_B3\\MSPR_JAVA_B3\\src\\main\\resources\\id\\"+raccourci+".jpg" + guillemet);
+                writer.println("<img src="+ guillemet +"/var/lib/jenkins/workspace/MSPR_JAVA_B3/MSPR_JAVA_B3/src/main/resources/id/"+raccourci+".jpg" + guillemet);
 
                 writer.flush();
                 writer.println("</body>");
