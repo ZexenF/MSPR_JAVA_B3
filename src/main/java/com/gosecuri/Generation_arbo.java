@@ -15,7 +15,6 @@ public class Generation_arbo {
             try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
                 writer.println("<head> <title>" + complet.getNom() + "</title> </head>");
                 for (String comp : complet.getMateriel()) {
-                    System.out.println(comp);
                     map_materiel.forEach((abrege, longue) -> {
                         if (abrege.equals(comp)) {
                             writer.println("<div><input type=\"checkbox\" name=\"" + longue + "\" checked>\n"
@@ -23,7 +22,7 @@ public class Generation_arbo {
                         }
                     });
                 }
-                writer.println("<img src="+ guillemet +"C:\\Users\\jerem\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\id\\"+raccourci+".jpg" + guillemet);
+                writer.println("<img src="+ guillemet +"\\var\\lib\\jenkins\\workspace\\MSPR_JAVA_B3\\MSPR_JAVA_B3\\src\\main\\resources\\id\\"+raccourci+".jpg" + guillemet);
 
                 writer.flush();
                 writer.println("</body>");

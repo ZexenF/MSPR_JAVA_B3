@@ -9,7 +9,7 @@ public class Read_materiel {
         Map<String, String> map_materiel = new HashMap<>();
         String line;
         String str[] = new String[20];
-        InputStream input = new FileInputStream("C:\\Users\\jerem\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\txt\\liste.txt");
+        InputStream input = new FileInputStream("\\var\\lib\\jenkins\\workspace\\MSPR_JAVA_B3\\MSPR_JAVA_B3\\src\\main\\resources\\txt\\liste.txt");
         InputStreamReader inputstr = new InputStreamReader(input);
         BufferedReader br = new BufferedReader(inputstr);
         while ((line = br.readLine()) != null) {
