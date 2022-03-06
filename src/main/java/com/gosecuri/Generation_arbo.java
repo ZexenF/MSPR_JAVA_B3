@@ -12,7 +12,7 @@ public class Generation_arbo {
         char guillemet ='"';
         map_agent.forEach((raccourci, complet) -> {
             new File(destination + raccourci).mkdir();
-            try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
+            try (PrintWriter writer = new PrintWriter(destination + "/" + raccourci + "/" + raccourci + ".html")) {
                 writer.println("<head> <title>" + complet.getNom() + "</title> </head>");
                 for (String comp : complet.getMateriel()) {
                     map_materiel.forEach((abrege, longue) -> {
