@@ -15,7 +15,6 @@ public class Read_materiel {
         while ((line = br.readLine()) != null) {
             str = line.split("\t");
             map_materiel.put(str[0], str[1]);
-            System.out.println(str[0] + str[1]);
         }
 
         return map_materiel;

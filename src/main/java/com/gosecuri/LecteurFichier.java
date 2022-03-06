@@ -20,7 +20,6 @@ public class LecteurFichier {
             String line;
             while ((line = br.readLine()) != null) {
                 map_agent.put(line, lecture_agent(line)); //Map contenant l'ID de l'agent lié a sa fiche agent
-                System.out.println(line);
             }
         } catch (IOException e) {
             System.out.println("Une erreur s'est passée.");
@@ -38,25 +37,18 @@ public class LecteurFichier {
         List<String> lecture_materiel = new ArrayList<>();
         try {
             FileReader file_agent = new FileReader(String.format("C:\\Users\\jerem\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\txt\\%s.txt", fiche)); //chemin a modifié car test en dur
-
             BufferedReader buffer = new BufferedReader(file_agent);
-            for (int i = 1; i < 15; i++) {
+            for (int i = 1; i < 16; i++) {
                 if (i == 1) {
                     lecture_nom = buffer.readLine(); //si 1er ligne c'est le nom de famille
-                    System.out.println(lecture_nom);
                 } else if (i == 2) {
                     lecture_prenom = buffer.readLine(); //si 2e ligne c'est le prénom
                 } else if (i == 3) {
                     lecture_fonction = buffer.readLine(); //si 3e ligne c'est la fonction
                 } else if (i == 4) {
-                    lecture_password = buffer.readLine(); //si 4e ligne c'est le mot de passe
+                    lecture_password = buffer.readLine(); //si 4e ligne c'est le mot de passe;
                 } else if (i > 5) {
-                    if (buffer.readLine() != null) {
-                        lecture_materiel.add(buffer.readLine());
-                    }
-                    else{
-                        buffer.readLine();//tout ce qui est après la 5e ligne (la 5e est vide) est du materiel qui est ajouté a une liste de String
-                    }
+                    lecture_materiel.add(buffer.readLine());
                 } else
                     buffer.readLine(); //Comme la ligne 5 est vide il faut continuer de lire le fichier en ignorant cette ligne
             }
@@ -66,7 +58,6 @@ public class LecteurFichier {
         }
         Agent agent_lu = new Agent(lecture_nom, lecture_prenom, lecture_password, lecture_fonction, lecture_materiel);
         System.out.println(lecture_materiel);
-        System.out.println(lecture_nom);
         return agent_lu;
     }
 

@@ -9,20 +9,22 @@ import java.util.Map;
 
 public class Generation_arbo {
     public static void generation_arborescence(Map<String, Agent> map_agent, String destination, Map<String, String> map_materiel) throws IOException {
-
+        char guillemet ='"';
         map_agent.forEach((raccourci, complet) -> {
             new File(destination + raccourci).mkdir();
             try (PrintWriter writer = new PrintWriter(destination + "\\" + raccourci + "\\" + raccourci + ".html")) {
+                writer.println("<head> <title>" + complet.getNom() + "</title> </head>");
                 for (String comp : complet.getMateriel()) {
+                    System.out.println(comp);
                     map_materiel.forEach((abrege, longue) -> {
-
-                        if (comp.equals(abrege)) {
+                        if (abrege.equals(comp)) {
                             writer.println("<div><input type=\"checkbox\" name=\"" + longue + "\" checked>\n"
                                     + "<label for =\"" + longue + "\"> " + longue + "</label>\n</div>");
                         }
                     });
                 }
-                ;
+                writer.println("<img src="+ guillemet +"C:\\Users\\jerem\\Documents\\GitHub\\MSPR_JAVA_B3_TXT\\id\\"+raccourci+".jpg" + guillemet);
+
                 writer.flush();
                 writer.println("</body>");
             } catch (FileNotFoundException e) {
