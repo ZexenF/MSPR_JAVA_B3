@@ -10,20 +10,19 @@ import java.util.Map;
 public class Generation_arbo {
     public static void generation_arborescence(Map<String, Agent> map_agent, String destination, Map<String, String> map_materiel) throws IOException {
         char guillemet ='"';
-        map_agent.forEach((raccourci, complet) -> {
+        map_agent.forEach((raccourci, complet) -> {                         //on parcourt tous les agents
             new File(destination + raccourci).mkdir();
-            try (PrintWriter writer = new PrintWriter(destination + "/" + raccourci + "/" + raccourci + ".html")) {
-                writer.println("<head> <title>" + complet.getNom() + "</title> </head>");
-                for (String comp : complet.getMateriel()) {
-                    map_materiel.forEach((abrege, longue) -> {
-                        if (abrege.equals(comp)) {
+            try (PrintWriter writer = new PrintWriter(destination + "/" + raccourci + "/" + raccourci + ".html")) {     //on crée le dossier et le fichier html correspondant a l'agent lu
+                writer.println("<head> <title>" + complet.getNom() + "</title> </head>");                                       //écriture du titre avec le nom de l'agent
+                for (String comp : complet.getMateriel()) {                                                                     //On parcourt le matériel de l'agent
+                    map_materiel.forEach((abrege, longue) -> {                                                                  //On parcourt la Hashmap du fichier materiel
+                        if (abrege.equals(comp)) {                                                                              //On regarde si le materiel de l'agent fait bien parti de la liste de materiel si c'est la cas on rajoute ce matériel dans le fichier html
                             writer.println("<div><input type=\"checkbox\" name=\"" + longue + "\" checked>\n"
                                     + "<label for =\"" + longue + "\"> " + longue + "</label>\n</div>");
                         }
                     });
                 }
-                writer.println("<img src="+ guillemet +"/var/lib/jenkins/workspace/MSPR_JAVA_B3/MSPR_JAVA_B3/src/main/resources/id/"+raccourci+".jpg" + guillemet);
-
+                writer.println("<img src="+ guillemet +"/var/lib/jenkins/workspace/MSPR_JAVA_B3/MSPR_JAVA_B3/src/main/resources/id/"+raccourci+".jpg" + guillemet);         //importe l'image correspondant a l'agent.
                 writer.flush();
                 writer.println("</body>");
             } catch (FileNotFoundException e) {
