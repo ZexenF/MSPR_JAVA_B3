@@ -9,8 +9,8 @@ pipeline {
             steps{
                 cleanWs() //cleans current workspace
                 dir('MSPR_JAVA_B3'){
-					git 'https://github.com/ZexenF/MSPR_JAVA_B3_TXT'
-                    git 'https://github.com/ZexenF/MSPR_JAVA_B3.git/'
+			git 'https://github.com/ZexenF/MSPR_JAVA_B3_TXT'
+                	//git 'https://github.com/ZexenF/MSPR_JAVA_B3.git/'
                     }
             }
         }
