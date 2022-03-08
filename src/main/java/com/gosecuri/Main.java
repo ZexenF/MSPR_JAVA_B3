@@ -15,7 +15,5 @@ public class Main {
         Map<String,String> ag2 = rm.fiche_materiel();
         Generation_arbo ga = new Generation_arbo();
         generation_arborescence(ag, "/var/lib/jenkins/workspace/MSPR_JAVA_B3/MSPR_JAVA_B3/target/web/", ag2); //on aura le 2e arguments lors de l'execution qui sera le dossier de destination des dossiers com.gosecuri.Agent
-
-
     }
 }
