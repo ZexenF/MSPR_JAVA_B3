@@ -13,7 +13,7 @@ public class Generation_arbo {
         map_agent.forEach((raccourci, complet) -> {                         //on parcourt tous les agents
             new File(destination + raccourci).mkdir();
             try (PrintWriter writer = new PrintWriter(destination + "/" + raccourci + "/" + raccourci + ".html")) {     //on crée le dossier et le fichier html correspondant a l'agent lu
-                writer.println("<head> <title>" + complet.getNom() + "</title> </head><link rel="+ guillemet +"stylesheet"+guillemet+"href="+guillemet+ "style.css"+guillemet+"/>");//écriture du titre avec le nom de l'agent
+                writer.println("<head> <title>" + complet.getNom() + "</title> </head><link rel="+ guillemet +"stylesheet"+guillemet+"href="+guillemet+ "/web/style.css"+guillemet+"/>");//écriture du titre avec le nom de l'agent
                 writer.println("<img src="+ guillemet +"/id/"+raccourci+".jpg" + guillemet +">");         //importe l'image correspondant a l'agent.
                 writer.println("<h1>" + complet.getNom() + "</h1>");
                 writer.println("<div class=" + guillemet +"divmat" + guillemet +">");
