@@ -29,7 +29,7 @@ pipeline {
             steps{
                 dir('MSPR_JAVA_B3/target'){
                 sh 'mkdir web/'
-                //I run this archive using javash 'java -jar base-console-app-stable.jar'
+                //I run this archive using sh java 'java -jar-GENERATEDjar.jar'
                 sh 'java -jar HTMLGenerator-1.0-SNAPSHOT-jar-with-dependencies.jar'
                 }
             }
@@ -37,6 +37,7 @@ pipeline {
         stage ('Deploy') {
             steps{
                 dir('MSPR_JAVA_B3/target'){
+                    //I send over ssh the agents files generated with the app to the webserver
                     sh 'scp -r web/ sshjenkins@msprb3.ddns.net:docker-apache-demo/src'
                 }
             }
