@@ -37,7 +37,7 @@ pipeline {
         stage ('Deploy') {
             steps{
                 dir('MSPR_JAVA_B3/target'){
-                    sh 'scp -r web/ sshjenkins@msprb3.ddns.net:docker-nginx-demo/src'
+                    sh 'scp -r web/ sshjenkins@msprb3.ddns.net:docker-apache-demo/src'
                 }
             }
         }
